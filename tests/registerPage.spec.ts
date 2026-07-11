@@ -6,7 +6,6 @@ console.log('Resolved file path:', filePath);
 
 
 type RegisterData = {
-    //genderMaleRadioButton: any;
     firstname: string;
     lastname: string;
     emailD: string;
