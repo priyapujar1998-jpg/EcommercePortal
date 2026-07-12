@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","6566","Login with POM","firefox","Sun Jul 12 15:31:00 IST 2026","passed","Sun Jul 12 15:31:06 IST 2026","Login page test with diff approach","loginPage.spec.ts","",""
+"","5384","Login with JSON data","webkit","Sun Jul 12 15:31:07 IST 2026","passed","Sun Jul 12 15:31:12 IST 2026","Login page test with diff approach","loginPage.spec.ts","",""
+"","5686","Login with POM","webkit","Sun Jul 12 15:31:07 IST 2026","passed","Sun Jul 12 15:31:13 IST 2026","Login page test with diff approach","loginPage.spec.ts","",""
+"","6460","Login with POM","chromium","Sun Jul 12 15:31:00 IST 2026","passed","Sun Jul 12 15:31:06 IST 2026","Login page test with diff approach","loginPage.spec.ts","",""
+"","6356","Login with JSON data","chromium","Sun Jul 12 15:31:00 IST 2026","passed","Sun Jul 12 15:31:06 IST 2026","Login page test with diff approach","loginPage.spec.ts","",""
+"","8198","Login with JSON data","firefox","Sun Jul 12 15:31:00 IST 2026","passed","Sun Jul 12 15:31:08 IST 2026","Login page test with diff approach","loginPage.spec.ts","",""
