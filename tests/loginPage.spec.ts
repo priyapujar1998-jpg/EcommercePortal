@@ -2,6 +2,7 @@
 import { LoginPage}  from "../POMDesign/LoginPage";
 import loginTestData from "../testData/loginTestData.json";
 import {test, expect} from '../customFixtures/pageObjects';
+import { getLoginToken } from "../Utils/apiUtils";
 
 
 type LoginCredentials = {
@@ -27,6 +28,18 @@ test.describe("Login page test with diff approach", () =>{
         await expect(page).toHaveTitle("Let's Shop");
 
     })
+
+    test("login wiuth API token", async({page, loginPage}) =>{
+        const loginToken=await getLoginToken("priyapujar1998@gmail.com","Test@123");
+        await page.addInitScript(value =>{
+            window.localStorage.setItem('token',value);
+        },
+        loginToken);
+        await page.goto("https://rahulshettyacademy.com/client/#/dashboard/dash");
+        await page.pause();
+        await expect(page).toHaveURL("https://rahulshettyacademy.com/client/#/dashboard/dash");
+    })
+    
 
 
 
