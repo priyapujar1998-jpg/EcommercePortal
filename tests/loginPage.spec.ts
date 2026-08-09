@@ -13,9 +13,13 @@ type LoginCredentials = {
 
 test.describe("Login page test with diff approach", () =>{
 
-    test("Login with POM", async ({ page ,loginPage}) => {
+    test("Login with POM", async ({ page ,loginPage, browser}) => {
+        const context=await browser.newContext();
         await loginPage.goto();
         await loginPage.validLogin("priyapujar1998@gmail.com","Test@123");
+        context.storageState({
+            path :"auth.json"
+        });
         await expect(page).toHaveURL("https://rahulshettyacademy.com/client/#/dashboard/dash");
         await expect(page).toHaveTitle("Let's Shop");
       
@@ -26,17 +30,16 @@ test.describe("Login page test with diff approach", () =>{
         await loginPage.validLogin(loginTestData.loginCredentials.username,loginTestData.loginCredentials.password);
         await expect(page).toHaveURL("https://rahulshettyacademy.com/client/#/dashboard/dash");
         await expect(page).toHaveTitle("Let's Shop");
-
+    
     })
 
-    test("login wiuth API token", async({page, loginPage}) =>{
+    test("login with API token", async({page, loginPage}) =>{
         const loginToken=await getLoginToken("priyapujar1998@gmail.com","Test@123");
         await page.addInitScript(value =>{
             window.localStorage.setItem('token',value);
         },
         loginToken);
         await page.goto("https://rahulshettyacademy.com/client/#/dashboard/dash");
-        await page.pause();
         await expect(page).toHaveURL("https://rahulshettyacademy.com/client/#/dashboard/dash");
     })
     
