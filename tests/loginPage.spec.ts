@@ -41,6 +41,9 @@ test.describe("Login page test with diff approach", () =>{
         loginToken);
         await page.goto("https://rahulshettyacademy.com/client/#/dashboard/dash");
         await expect(page).toHaveURL("https://rahulshettyacademy.com/client/#/dashboard/dash");
+
+    
+
     })
     
 
