@@ -12,3 +12,4 @@ export async function getLoginToken(userEmail:string, userPassword:string){
     const token = responseBody.token;
     return token;
 }
+
